@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
+import firebase from 'firebase';
 
 const Profile = ({navigation}) => {
 
@@ -7,9 +8,7 @@ const Profile = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.logo}>Profile</Text>
             <View style={styles.items}>
-                <TouchableOpacity style={styles.signBtn} onPress={()=>navigation.navigate('Login')}>
-                    <Text style={styles.signText}>Logout</Text>
-                </TouchableOpacity>
+                <Button title='Sign Out' onPress={() => firebase.auth().signOut()} />
             </View>
         </View>
     );

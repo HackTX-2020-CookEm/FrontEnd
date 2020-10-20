@@ -7,9 +7,6 @@ const SignUpScreen = ({navigation}) => {
         password:""
     }
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-
     return (
         <View style={styles.container}>
             <Text style={styles.logo}>SignUp</Text>
@@ -28,7 +25,7 @@ const SignUpScreen = ({navigation}) => {
                     placeholderTextColor="black"
                     onChangeText={text => setPassword(text)}/>
             </View>
-            <TouchableOpacity style={styles.signBtn} onPress={()=>navigation.navigate('Login')}>
+            <TouchableOpacity style={styles.signBtn} onPress={()=>navigation.navigate('BevoEats')}>
                 <Text style={styles.signText}>SIGNUP</Text>
             </TouchableOpacity>
         </View>

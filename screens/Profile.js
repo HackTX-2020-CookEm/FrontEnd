@@ -1,17 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-import { AuthContext } from '../components/context';
-
 const Profile = ({navigation}) => {
-
-    const { signOut } = React.useContext(AuthContext);
 
     return (
         <View style={styles.container}>
             <Text style={styles.logo}>Profile</Text>
             <View style={styles.items}>
-                <TouchableOpacity style={styles.signBtn} onPress={()=>{signOut()}}>
+                <TouchableOpacity style={styles.signBtn} onPress={()=>navigation.navigate('Login')}>
                     <Text style={styles.signText}>Logout</Text>
                 </TouchableOpacity>
             </View>

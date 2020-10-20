@@ -1,80 +1,32 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import LoginScreen from './screens/LoginScreen';
-import SignUpScreen from './screens/SignUpScreen';
-import ForgotPs from './screens/ForgotPs';
+import firebase from 'firebase';
+import { firebaseConfig } from './config';
+firebase.initializeApp(firebaseConfig);
+
+import RootScreen from './screens/RootScreen';
+import LoadingScreen from './screens/LoadingScreen';
 import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
 
-import { AuthContext } from './components/context';
+export default class App extends React.Component {
 
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
-
-const App = () => {
-
-  createHomeStack = () =>
-  <Stack.Navigator>
-    <Stack.Screen name="Login" component={ LoginScreen } />
-    <Stack.Screen name="SignUp" component={ SignUpScreen } />
-  </Stack.Navigator>
-
-
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [userToken, setUserToken] = React.useState(null);
-
-  const authContext = React.useMemo(() => ({
-    signIn: () => {
-      setUserToken('hi');
-      setIsLoading(false);
-    },
-    signOut: () => {
-      setUserToken(null);
-      setIsLoading(false);
-    },
-    signUp: () => {
-      setUserToken('hi');
-      setIsLoading(false);
-    },
-  }));
-/*
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-*/
-  if ( isLoading ) {
-    return(
-      <View style={{ flex:1, justifyContent:'center', alignItems:'center' }}>
-        <ActivityIndicator size="large" />
-      </View>
+  render() {
+    return (
+        <AppNavigator />
     );
   }
-
-  return (
-    /*<LoginScreen />*/
-    <AuthContext.Provider value={ authContext }>
-      <NavigationContainer>
-        { userToken != null ? (
-          <HomeScreen />
-        ) :
-          <Stack.Navigator>
-            <Stack.Screen name="Login" component={ LoginScreen } options={{ headerShown: false }} />
-            <Stack.Screen name="SignUp" component={ SignUpScreen } options={{ headerShown: false }} />
-            <Stack.Screen name="Forgot" component={ ForgotPs } options={{ headerShown: false }} />
-            <Stack.Screen name="BevoEats" component={ HomeScreen } options={{ headerShown: false }} />
-        </Stack.Navigator>
-        }
-      </NavigationContainer>
-    </AuthContext.Provider>
-    
-  );
 }
 
-export default App;
+const AppSwitchNavigator = createSwitchNavigator({
+  LoadingScreen: LoadingScreen,
+  RootScreen: RootScreen,
+  HomeScreen: HomeScreen,
+});
+
+const AppNavigator = createAppContainer(AppSwitchNavigator);
 
 const styles = StyleSheet.create({
 

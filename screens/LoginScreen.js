@@ -1,50 +1,114 @@
-import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
+import * as Google from 'expo-google-app-auth';
+import firebase from 'firebase';
 
-import { AuthContext } from '../components/context';
+class LoginScreen extends Component {
+    isUserEqual = (googleUser, firebaseUser) => {
+        if (firebaseUser) {
+          var providerData = firebaseUser.providerData;
+          for (var i = 0; i < providerData.length; i++) {
+            if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
+                providerData[i].uid === googleUser.getBasicProfile().getId()) {
+              // We don't need to reauth the Firebase connection.
+              return true;
+            }
+          }
+        }
+        return false;
+    };
 
-const LoginScreen = ({navigation}) => {
-    const [data, setData] = React.useState({
-        email: '',
-        password: '',
-        check_textInputChange: false,
-        secureTextEntry: true
-    })
+    onSignIn = (googleUser) => {
+        console.log('Google Auth Response', googleUser);
+        // We need to register an Observer on Firebase Auth to make sure auth is initialized.
+        var unsubscribe = firebase.auth().onAuthStateChanged(function(firebaseUser) {
+          unsubscribe();
+          // Check if we are already signed-in Firebase with the correct user.
+          if (!this.isUserEqual(googleUser, firebaseUser)) {
+            // Build Firebase credential with the Google ID token.
+            var credential = firebase.auth.GoogleAuthProvider.credential(
+                googleUser.idToken,
+                googleUser.accessToken);
+            // Sign in with credential from the Google user.
+            firebase.auth().signInWithCredential(credential).then(function(result){console.log('user signed in');
+            firebase.database().ref('/users/' + result.user.uid).set({
+                gmail: result.user.email,
+                profile_picture: result.additionalUserInfo.profile.picture,
+                locale: result.additionalUserInfo.profile.locale,
+                first_name: result.additionalUserInfo.profile.given_name,
+                last_name: result.additionalUserInfo.profile.family_name
+            })})
+            .catch(function(error) {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // The email of the user's account used.
+              var email = error.email;
+              // The firebase.auth.AuthCredential type that was used.
+              var credential = error.credential;
+              // ...
+            });
+          } else {
+            console.log('User already signed-in Firebase.');
+          }
+        }.bind(this)
+        );
+    };
 
-    const { signIn } = React.useContext(AuthContext);
+    signInWithGoogleAsync = async () => {
+        try {
+          const result = await Google.logInAsync({
+            //  androidClientId: YOUR_CLIENT_ID_HERE,
+            behavior:'web',
+            iosClientId: '917899898935-nrtakra5qmq6kar68ld7agt4gh00r3td.apps.googleusercontent.com',
+            scopes: ['profile', 'email'],
+          });
+      
+          if (result.type === 'success') {
+            this.onSignIn(result);
+            return result.accessToken;
+          } else {
+            return { cancelled: true };
+          }
+        } catch (e) {
+          return { error: true };
+        }
+    };
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-
-    return (
-        <View style={styles.container}>
-            <Text style={styles.logo}>BevoEats</Text>
-            <View style={styles.inputView} >
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Email..." 
-                    placeholderTextColor="black"
-                    onChangeText={text => setEmail(text)}/>
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.logo}>BevoEats</Text>
+                <View style={styles.inputView} >
+                    <TextInput  
+                        style={styles.inputText}
+                        placeholder="Email..." 
+                        placeholderTextColor="black"
+                        onChangeText={text => setEmail(text)}/>
+                </View>
+                <View style={styles.inputView} >
+                    <TextInput  
+                        secureTextEntry
+                        style={styles.inputText}
+                        placeholder="Password..." 
+                        placeholderTextColor="black"
+                        onChangeText={text => setPassword(text)}/>
+                </View>
+                <TouchableOpacity onPress={()=>navigation.navigate('Forgot')}>
+                    <Text style={styles.forgot}>Forgot Password?</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginBtn} onPress={()=>this.signInWithGoogleAsync()}>
+                    <Text style={styles.loginText}>LOGIN</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+                    <Text style={styles.signUpText}>Signup</Text>
+                </TouchableOpacity>
+                <View style={styles.googleLogin}>
+                    <Button title="Sign In With Google" onPress={() => this.signInWithGoogleAsync()} />
+                </View>
             </View>
-            <View style={styles.inputView} >
-                <TextInput  
-                    secureTextEntry
-                    style={styles.inputText}
-                    placeholder="Password..." 
-                    placeholderTextColor="black"
-                    onChangeText={text => setPassword(text)}/>
-            </View>
-            <TouchableOpacity onPress={()=>navigation.navigate('Forgot')}>
-                <Text style={styles.forgot}>Forgot Password?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.loginBtn} onPress={()=> {signIn()}}>
-                <Text style={styles.loginText}>LOGIN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
-                <Text style={styles.signUpText}>Signup</Text>
-            </TouchableOpacity>
-        </View>
-    );
+        );
+    }
 };
 
 export default LoginScreen;
@@ -94,5 +158,8 @@ const styles = StyleSheet.create({
     },
     signUpText:{
         color:"black"
+    },
+    googleLogin:{
+        marginTop:200
     }
 });

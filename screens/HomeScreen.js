@@ -9,6 +9,7 @@ import Home from './Home';
 import Friends from './Friends';
 import Explore from './Explore';
 import Profile from './Profile';
+import Post from './Post';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -17,7 +18,8 @@ const HomeScreen = ({navigation}) => {
 
     createHomeScreenStack = () =>
         <Stack.Navigator>
-            <Stack.Screen name="HomeScreen" component={ Home }  options={{ headerShown: false }} />
+            <Stack.Screen name="HomeScreen" component={ Home } options={{ headerShown: false }} />
+            <Stack.Screen name="Post" component={ Post } options={{ headerShown: false }}/>
         </Stack.Navigator>
 
     return (

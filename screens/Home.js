@@ -80,43 +80,47 @@ function Item({ user_name, user_image, feed_image, user_comment, user_likes, use
     );
 }
 
-export default function Home({navigate}) {
+class Home extends Component {
 
-    createHomeStack = () =>
+    createHomeScreenStack = () =>
     <Stack.Navigator>
-        <Stack.Screen name="Post" component={ Post } />
+        <Stack.Screen name="Post" component={ Post }  options={{ headerShown: false }} />
     </Stack.Navigator>
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.containerLeft}>
-                    <Text style={styles.logo}>Home</Text>
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <View style={styles.containerLeft}>
+                        <Text style={styles.logo}>Home</Text>
+                    </View>
+                    <View style={styles.containerRight}>
+                        <IconButton
+                            icon="plus-box"
+                            color="black"
+                            size={30}
+                            onPress={() => {this.props.navigation.navigate('Post');}}
+                        />
+                    </View>
                 </View>
-                <View style={styles.containerRight}>
-                    <IconButton
-                        icon="plus-box"
-                        color="black"
-                        size={30}
-                        onPress={() => { 'Post' }}
-                    />
-                </View>
+                <FlatList
+                    data={DATA}
+                    renderItem={({ item }) => <Item user_name={item.user_name} 
+                        user_name={item.user_name}
+                        user_image={item.user_image}
+                        feed_image={item.feed_image}
+                        user_comment={item.user_comment}
+                        user_likes={item.user_likes}
+                        user_chat={item.user_chat}
+                    />}
+                    keyExtractor={item => item.id}
+                />            
             </View>
-            <FlatList
-                data={DATA}
-                renderItem={({ item }) => <Item user_name={item.user_name} 
-                    user_name={item.user_name}
-                    user_image={item.user_image}
-                    feed_image={item.feed_image}
-                    user_comment={item.user_comment}
-                    user_likes={item.user_likes}
-                    user_chat={item.user_chat}
-                />}
-                keyExtractor={item => item.id}
-            />            
-        </View>
-    );
+        );
+    }
 };
+
+export default Home;
 
 const styles = StyleSheet.create({
     container: {

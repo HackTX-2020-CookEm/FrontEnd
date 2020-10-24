@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Home from './Home';
 import Friends from './Friends';
@@ -21,7 +22,26 @@ const HomeScreen = ({navigation}) => {
 
     return (
         <NavigationContainer independent={ true }>
-            <Tab.Navigator>
+            <Tab.Navigator screenOptions={({ route }) => ({tabBarIcon: ({ focused, color, size }) => { let iconName;
+                    if (route.name === 'Home') {
+                      iconName = 'ios-home';
+                    } else if (route.name === 'Friends') {
+                      iconName = 'ios-happy';
+                    }
+                    else if (route.name === 'Explore') {
+                      iconName = 'ios-search';
+                    }
+                    else if (route.name === 'Profile') {
+                      iconName = 'ios-list';
+                    }
+
+                    // You can return any component that you like here!
+                    return <Ionicons name={iconName} size={size} color={color} />;
+                  },
+                })}
+                tabBarOptions={{
+                  activeTintColor: '#BF5700',
+                  inactiveTintColor: 'gray', }}>
                 <Tab.Screen name="Home" component={ createHomeScreenStack } options={{ headerShown: false }} />
                 <Tab.Screen name="Friends" component={ Friends } options={{ headerShown: false }} />
                 <Tab.Screen name="Explore" component={ Explore } options={{ headerShown: false }} />

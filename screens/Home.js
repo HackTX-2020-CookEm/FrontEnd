@@ -15,7 +15,7 @@ const DATA = [
     },
     {
         user_name:'Albert Cho',
-        user_image:'https://www.atlanticcouncil.org/wp-content/uploads/2020/06/albert-cho-mlpfellow-2016.jpg',
+        user_image:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
         feed_image:'https://miro.medium.com/max/4000/1*yGK9jD35goWdn3XtRq9y4Q.jpeg',
         user_comment:'Tried to be artsy. Had yummy sushi this afternoon with my buddies. I would definetly recommend this place.',
         user_likes:'201',
@@ -23,7 +23,7 @@ const DATA = [
     },
     {
         user_name:'Ashray Desai',
-        user_image:'https://castyou-website.sgp1.digitaloceanspaces.com/2019/03/AashrayBatra.jpg',
+        user_image:'https://media-exp1.licdn.com/dms/image/C4E03AQEcZa0dO6mqKA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=LuY6cP7DRw_iZepYkM63EynXpLnpLnqQZp1hoOYejkw',
         feed_image:'https://cdn.palmbeachillustrated.com/wp-content/uploads/sites/78/2019/08/Indianspread.jpg',
         user_comment:'It is hard to find great Indian food here in Austin but I stumbled across this small restaurant called Biryani Shack. 10/10!',
         user_likes:'176',

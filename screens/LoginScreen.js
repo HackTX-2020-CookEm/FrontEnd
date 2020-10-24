@@ -4,6 +4,7 @@ import * as Google from 'expo-google-app-auth';
 import firebase from 'firebase';
 
 class LoginScreen extends Component {
+
     isUserEqual = (googleUser, firebaseUser) => {
         if (firebaseUser) {
           var providerData = firebaseUser.providerData;
@@ -82,6 +83,26 @@ class LoginScreen extends Component {
         }
     };
 
+    constructor(props) {
+        super(props)
+
+        this.state = ({
+            email: '',
+            password: '',
+        })
+    }
+
+    loginUser = (email, password) => {
+        try {
+                firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
+                console.log(user)
+            })
+        }
+        catch(error) {
+            console.log(error.toString())
+        }
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -91,7 +112,7 @@ class LoginScreen extends Component {
                         style={styles.inputText}
                         placeholder="Email..." 
                         placeholderTextColor="black"
-                        onChangeText={text => setEmail(text)}/>
+                        onChangeText={(email) => this.setState({ email })}/>
                 </View>
                 <View style={styles.inputView} >
                     <TextInput  
@@ -99,15 +120,15 @@ class LoginScreen extends Component {
                         style={styles.inputText}
                         placeholder="Password..." 
                         placeholderTextColor="black"
-                        onChangeText={text => setPassword(text)}/>
+                        onChangeText={(password) => this.setState({ password })}/>
                 </View>
-                <TouchableOpacity onPress={()=>navigation.navigate('Forgot')}>
+                <TouchableOpacity onPress={()=> { this.props.navigation.navigate("Forgot"); }}>
                     <Text style={styles.forgot}>Forgot Password?</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.loginBtn} onPress={()=>this.signInWithGoogleAsync()}>
+                <TouchableOpacity style={styles.loginBtn} onPress={()=>this.loginUser(this.state.email, this.state.password)}>
                     <Text style={styles.loginText}>LOGIN</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+                <TouchableOpacity onPress={()=> { this.props.navigation.navigate("SignUp"); }}>
                     <Text style={styles.signUpText}>Signup</Text>
                 </TouchableOpacity>
                 <View style={styles.googleLogin}>
@@ -167,6 +188,6 @@ const styles = StyleSheet.create({
         color:"black"
     },
     googleLogin:{
-        marginTop:200
+        marginTop:170
     }
 });

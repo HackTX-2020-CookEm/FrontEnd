@@ -1,27 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import MapView from 'react-native-maps';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
-const Explore = ({navigation}) => {
+export default class App extends React.Component {
+  render() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.logo}>Explore</Text>
-        </View>
+      <View style={styles.container}>
+        <MapView style={styles.mapStyle} />
+      </View>
     );
-};
-
-export default Explore;
+  }
+}
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#FAFDFF',
-    },
-    logo: {
-        fontWeight:"bold",
-        fontSize:35,
-        color:"black",
-        marginBottom:20,
-        marginTop:70,
-        marginLeft:20,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mapStyle: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+  },
 });

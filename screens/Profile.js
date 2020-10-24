@@ -11,7 +11,9 @@ const Profile = ({navigation}) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.logo}>Profile</Text>
+                <View style={styles.header}>
+                    <Text style={styles.logo}>Profile</Text>
+                </View>
                 <View style={styles.itemContainer}>
                     <Image 
                         style={styles.userImage} 

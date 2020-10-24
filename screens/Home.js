@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity } 
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { IconButton, Colors } from 'react-native-paper';
+import Posts from './Post';
 
 const DATA = [
     {
@@ -75,7 +76,7 @@ function Item({ user_name, user_image, feed_image, user_comment, user_likes, use
     );
 }
 
-export default function Home() {
+export default function Home({navigate}) {
 
     return (
         <View style={styles.container}>
@@ -88,7 +89,7 @@ export default function Home() {
                         icon="plus-box"
                         color="black"
                         size={30}
-                        onPress={() => console.log('Pressed')}
+                        onPress={() => { Posts }}
                     />
                 </View>
             </View>

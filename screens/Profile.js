@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, Dimensions, Image, StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 import firebase from 'firebase';
 
 const width = Dimensions.get('window').width
@@ -9,34 +9,36 @@ const B = (props) => <Text style = {{fontWeight: 'bold'}}>{props.children}</Text
 const Profile = ({navigation}) => {
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.logo}>Profile</Text>
-            <View style={styles.itemContainer}>
-                <Image 
-                    style={styles.userImage} 
-                    source={{
-                        uri: 'https://media-exp1.licdn.com/dms/image/C5603AQGGG9Ms4ygWvA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=b6QzI52ads4LXVsf1GBftgWFWxk8OHOdY72EUk3gJTw'}}
-                />
-                <Text style={styles.profileName}><B>Kevin Yang</B> (kevkev3000)</Text>
-                <Text style={styles.profileText}>Major foodie who loves grilled fish and donuts!</Text>
-                <Text style={styles.profileInfo}><B>18</B> Friends                <B>2</B> Posts</Text>
+        <ScrollView>
+            <View style={styles.container}>
+                <Text style={styles.logo}>Profile</Text>
+                <View style={styles.itemContainer}>
+                    <Image 
+                        style={styles.userImage} 
+                        source={{
+                            uri: 'https://media-exp1.licdn.com/dms/image/C5603AQGGG9Ms4ygWvA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=b6QzI52ads4LXVsf1GBftgWFWxk8OHOdY72EUk3gJTw'}}
+                    />
+                    <Text style={styles.profileName}><B>Kevin Yang</B> (kevkev3000)</Text>
+                    <Text style={styles.profileText}>Major foodie who loves grilled fish and donuts!</Text>
+                    <Text style={styles.profileInfo}><B>18</B> Friends                <B>2</B> Posts</Text>
+                </View>
+                <View style={styles.listView}>
+                    <Image 
+                        style={styles.card} 
+                        source={{
+                            uri: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}}
+                    />
+                    <Image 
+                        style={styles.card} 
+                        source={{
+                            uri: 'https://i.ndtvimg.com/i/2015-10/grilled-fish-625_625x350_41445897097.jpg'}}
+                    />
+                </View>
+                <View style={styles.items}>
+                    <Button title='Sign Out' onPress={() => firebase.auth().signOut()} />
+                </View>
             </View>
-            <View style={styles.listView}>
-                <Image 
-                    style={styles.card} 
-                    source={{
-                        uri: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}}
-                />
-                <Image 
-                    style={styles.card} 
-                    source={{
-                        uri: 'https://i.ndtvimg.com/i/2015-10/grilled-fish-625_625x350_41445897097.jpg'}}
-                />
-            </View>
-            <View style={styles.items}>
-                <Button title='Sign Out' onPress={() => firebase.auth().signOut()} />
-            </View>
-        </View>
+        </ScrollView>
     );
 };
 
@@ -49,7 +51,8 @@ const styles = StyleSheet.create({
     },
     items: {
         alignItems: 'center',
-        marginTop:130
+        marginTop:100,
+        marginBottom:100
     },
     logo: {
         fontWeight:"bold",
@@ -87,13 +90,11 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:"black",
         marginTop:10,
-        marginLeft:20,
         marginBottom:15,
     },
     profileText: {
         fontSize:15,
         color:"black",
-        marginLeft:20,
     },
     profileInfo: {
         fontSize:20,

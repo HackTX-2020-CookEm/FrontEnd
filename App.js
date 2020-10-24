@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
 
 import firebase from 'firebase';
 import { firebaseConfig } from './config';
@@ -15,7 +17,9 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <ApplicationProvider {...eva} theme={eva.light}>
         <AppNavigator />
+      </ApplicationProvider>
     );
   }
 }

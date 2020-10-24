@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { IconButton, Colors } from 'react-native-paper';
 
 const DATA = [
     {
@@ -79,7 +80,17 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.logo}>Home</Text>
+                <View style={styles.containerLeft}>
+                    <Text style={styles.logo}>Home</Text>
+                </View>
+                <View style={styles.containerRight}>
+                    <IconButton
+                        icon="plus-box"
+                        color="black"
+                        size={30}
+                        onPress={() => console.log('Pressed')}
+                    />
+                </View>
             </View>
             <FlatList
                 data={DATA}
@@ -109,6 +120,15 @@ const styles = StyleSheet.create({
         marginBottom:20,
         marginTop:70,
         marginLeft:20,
+    },
+    header: {
+        flexDirection:'row',
+        justifyContent:'space-between',
+    },
+    containerRight: {
+        marginRight:15,
+        marginTop:62,
+        flexDirection:'row',
     },
     card: {
         padding:10,

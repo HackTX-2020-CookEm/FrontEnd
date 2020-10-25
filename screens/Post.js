@@ -119,10 +119,11 @@ const styles = StyleSheet.create({
     postButCont: {
         justifyContent:'center',
         alignItems:'center',
+        color: '#D4AF37'
     },
     postContent:{
         width:"60%",
-        backgroundColor:"#BF5700",
+        backgroundColor:"#FF1300",
         borderRadius:25,
         height:50,
         alignItems:"center",

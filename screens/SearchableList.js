@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { ListItem, SearchBar } from 'react-native-elements';
 
-class SearchableList extends Component {
+class FlatListDemo extends Component {
   constructor(props) {
     super(props);
 
@@ -11,72 +11,72 @@ class SearchableList extends Component {
       data: 
       [
         {
-            name:{first:'Ramen Tatsu-Ya'},
-            user:'1234 S Lamar Blvd, Austin, TX 78704',
+            name:{first:'Jasmine', last: 'Lu'},
+            user:'jlu484',
             picture:'https://i.pinimg.com/736x/fc/45/6a/fc456aba424730185b1496c75c99c7d2.jpg',
         },
         {
-            name:{first:'Loro'},
-            user:'2115 S Lamar Blvd, Austin, TX 78704',
+            name:{first:'Albert', last: 'Cho'},
+            user:'_albertcho_',
             picture:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
         },
         {
-            name:{first:'Kokodak'},
+            name:{first:'Ashray', last: 'Desai'},
             user:'illushray',
             picture:'https://media-exp1.licdn.com/dms/image/C4E03AQEcZa0dO6mqKA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=LuY6cP7DRw_iZepYkM63EynXpLnpLnqQZp1hoOYejkw',
         },
         {
-            name:{first:"MangoMango"},
+            name:{first:"Loni", last:"Fogaça"},
             user:'lonny1994',
             picture:'https://randomuser.me/api/portraits/women/16.jpg',
         },
         {
-            name:{first:'Halal Bros'},
+            name:{first:'Nathaniel', last: 'Webb'},
             user:'webbster',
             picture:'https://randomuser.me/api/portraits/men/84.jpg',
         },
         {
-            name:{first:"CoCo's Cafe"},
+            name:{first:'Jarod', last: 'Vester'},
             user:'jv3913',
             picture:'https://randomuser.me/api/portraits/men/98.jpg',
         },
         {
-            name:{first:"Teapioca Lounge"},
+            name:{first:"Elias", last:"Toivonen"},
             user:'smallfrog350',
             picture:'https://randomuser.me/api/portraits/men/28.jpg',
         },
         {
-            name:{first:'Sharetea'},
+            name:{first:'Nina', last: 'Reid'},
             user:'tinypeacock634',
             picture:'https://randomuser.me/api/portraits/women/37.jpg',
         },
         {
-            name:{first:'Roaring Fork'},
+            name:{first:'Laura', last: 'Jackson'},
             user:'greenbird919',
             picture:'https://randomuser.me/api/portraits/women/78.jpg',
         },
         {
-            name:{first:'Sway'},
+            name:{first:'Jason', last:'Math'},
             user:'jmath123',
             picture:'https://i.pinimg.com/originals/5a/c9/d9/5ac9d91aee8d3b1cc377f87220379f88.jpg',
         },
         {
-            name:{first:'Frost Gelato'},
+            name:{first:'Kimberly', last:'Ludwig'},
             user:'kimmielud',
             picture:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
         },
         {
-            name:{first:'JINYA Ramen Bar'},
+            name:{first:'Max', last:'Wolfenstein'},
             user:'shoemastercop',
             picture:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
         },
         {
-            name:{first:'Kona Grill'},
+            name:{first:'Camille', last:'Jack'},
             user:'camille-jj',
             picture:'https://newtv.org/images/assets/New-Facility-Additions/_resampled/croppedimage128128-Ball-Jars-Sharon-Schindler-Photography-2012.jpg',
         },
         {
-            name:{first:'SUSHI JUNAI 1'},
+            name:{first:'Richard', last:'Belson'},
             user:'gavinlovebelson',
             picture:'https://s3-us-west-2.amazonaws.com/assets.coderag.prd/wp-content/uploads/2017/06/coderag_s4_banners_gavin.jpg.png',
         },
@@ -86,7 +86,7 @@ class SearchableList extends Component {
 
     this.arrayholder = [
         {
-            name:{first:'Jasmine'},
+            name:{first:'Jasmine', last: 'Lu'},
             user:'jlu484',
             picture:'https://i.pinimg.com/736x/fc/45/6a/fc456aba424730185b1496c75c99c7d2.jpg',
         },
@@ -181,7 +181,7 @@ class SearchableList extends Component {
     });
 
     const newData = this.arrayholder.filter(item => {
-      const itemData = `${item.user.toUpperCase()} ${item.name.first.toUpperCase()}`;
+      const itemData = `${item.user.toUpperCase()} ${item.name.first.toUpperCase()} ${item.name.last.toUpperCase()}`;
       const textData = text.toUpperCase();
 
       return itemData.indexOf(textData) > -1;
@@ -223,7 +223,7 @@ class SearchableList extends Component {
           renderItem={({ item }) => (
             <ListItem
               leftAvatar={{ source: { uri: item.picture } }}
-              title={`${item.name.first}`}
+              title={`${item.name.first} ${item.name.last}`}
               subtitle={item.user}
             />
           )}
@@ -236,4 +236,4 @@ class SearchableList extends Component {
   }
 }
 
-export default SearchableList;
+export default FlatListDemo;

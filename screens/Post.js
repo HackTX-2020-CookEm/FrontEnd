@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
-import { Keyboard, TouchableWithoutFeedback, Image, 
+import { ScrollView, Keyboard, TouchableWithoutFeedback, Image, 
     Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Input } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
@@ -45,28 +45,32 @@ export default function Post() {
             <View style={styles.header}>
                 <Text style={styles.logo}>Post</Text>
             </View>
-            <View style={styles.content}>
-                <View style={styles.picturePicker}>
-                    <Button title="Pick an image from camera roll" onPress={pickImage} />
-                    {feed_image && <Image source={{ uri: feed_image }} style={{ width: 200, height: 200 }} />}
-                </View>
-                <DismissKeyboard>
-                    <View style={styles.inputField}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Caption..." 
-                            placeholderTextColor="black"
-
-                            multiline={false}
-                        />
+            <ScrollView contentContainerStyle={{flexGrow: 1}}
+                keyboardShouldPersistTaps='handled'
+            >
+                <View style={styles.content}>
+                    <View style={styles.picturePicker}>
+                        <Button title="Pick an image from camera roll" onPress={pickImage} />
+                        {feed_image && <Image source={{ uri: feed_image }} style={{ width: 200, height: 200 }} />}
                     </View>
-                </DismissKeyboard>
-                <View style={styles.postButCont}>
-                    <TouchableOpacity style={styles.postContent} onPress={()=> alert('')}>
-                        <Text style={styles.postText}>Post</Text>
-                    </TouchableOpacity>
+                    <DismissKeyboard>
+                        <View style={styles.inputField}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="Caption..." 
+                                    placeholderTextColor="black"
+
+                                    multiline={true}
+                                />
+                        </View>
+                    </DismissKeyboard>
+                    <View style={styles.postButCont}>
+                        <TouchableOpacity style={styles.postContent} onPress={()=> alert('Posted')}>
+                            <Text style={styles.postText}>Post</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+            </ScrollView>
         </View>
     );
 }
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
     picturePicker: {
         flex: 1, 
         alignItems: 'center', 
-        marginTop:50,
+        marginTop:20,
     },
     content:{
         flex: 1,
@@ -108,8 +112,9 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
     },
     inputField:{
-        marginBottom:70,
+        marginBottom:59,
         alignItems:'center',
+        marginTop:70
     },
     postButCont: {
         justifyContent:'center',
@@ -122,6 +127,7 @@ const styles = StyleSheet.create({
         height:50,
         alignItems:"center",
         justifyContent:"center",
+        marginTop:50,
         marginBottom:150
     },
     postText:{

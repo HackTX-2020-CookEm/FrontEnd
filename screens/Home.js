@@ -29,6 +29,30 @@ const DATA = [
         user_likes:'176',
         user_chat:'12',
     },
+    {
+        user_name:'Nina Reid',
+        user_image:'https://randomuser.me/api/portraits/women/37.jpg',
+        feed_image:'https://i.pinimg.com/originals/cd/f7/ba/cdf7bafce08e39364bd40b328f2fbd5c.jpg',
+        user_comment:'Enjoying a cold snack on a cold day. Brrrrrrr!',
+        user_likes:'112',
+        user_chat:'2',
+    },
+    {
+        user_name:'Kimberly Ludwig',
+        user_image:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
+        feed_image:'https://simply-delicious-food.com/wp-content/uploads/2018/07/mexican-lunch-bowls-3.jpg',
+        user_comment:'Boyfriend suprised me with a delicious bowl of avocado, grilled chicken, corn, tomato, and rice.',
+        user_likes:'315',
+        user_chat:'21',
+    },
+    {
+        user_name:'Max Wolfenstein',
+        user_image:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
+        feed_image:'https://assets.bonappetit.com/photos/57ae47b5f1c801a1038bd23a/16:9/w_1000,c_limit/garlic-rosemary-steak.jpg',
+        user_comment:'Great grilling weather today! 50 degrees this morning and decided to cook up some streak for lunch, perfect medium rare.',
+        user_likes:'142',
+        user_chat:'32',
+    },
 ]
 
 function Item({ user_name, user_image, feed_image, user_comment, user_likes, user_chat }) {
@@ -108,7 +132,7 @@ class Home extends Component {
                         user_likes={item.user_likes}
                         user_chat={item.user_chat}
                     />}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item.user_name}
                 />            
             </View>
         );

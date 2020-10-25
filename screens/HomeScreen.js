@@ -9,6 +9,7 @@ import Home from './Home';
 import Friends from './Friends';
 import Explore from './Explore';
 import Profile from './Profile';
+import Restaurants from './Restaurants';
 import Post from './Post';
 
 const Stack = createStackNavigator();
@@ -47,6 +48,7 @@ const HomeScreen = ({navigation}) => {
                 <Tab.Screen name="Home" component={ createHomeScreenStack } options={{ headerShown: false }} />
                 <Tab.Screen name="Friends" component={ Friends } options={{ headerShown: false }} />
                 <Tab.Screen name="Explore" component={ Explore } options={{ headerShown: false }} />
+                <Tab.Screen name="For You" component={ Restaurants } options={{ headerShown: false }} />
                 <Tab.Screen name="Profile" component={ Profile } options={{ headerShown: false }} />
             </Tab.Navigator>
         </NavigationContainer>

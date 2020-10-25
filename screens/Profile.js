@@ -47,6 +47,9 @@ const Profile = ({navigation}) => {
                             uri: 'https://i.ndtvimg.com/i/2015-10/grilled-fish-625_625x350_41445897097.jpg'}}
                     />
                 </View>
+                <View style={styles.footer}>
+
+                </View>
             </View>
         </ScrollView>
     );
@@ -126,4 +129,7 @@ const styles = StyleSheet.create({
         marginTop:62,
         flexDirection:'row',
     },
+    footer: {
+        marginBottom:200
+    }
 });

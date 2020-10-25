@@ -106,7 +106,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.logo}>BevoEats</Text>
+                <Text style={styles.logo}>PotLuck</Text>
                 <View style={styles.inputView} >
                     <TextInput  
                         style={styles.inputText}

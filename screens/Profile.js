@@ -22,7 +22,7 @@ const Profile = ({navigation}) => {
                     />
                     <Text style={styles.profileName}><B>Kevin Yang</B> (kevkev3000)</Text>
                     <Text style={styles.profileText}>Major foodie who loves grilled fish and donuts!</Text>
-                    <Text style={styles.profileInfo}><B>18</B> Friends                <B>2</B> Posts</Text>
+                    <Text style={styles.profileInfo}><B>14</B> Friends                <B>2</B> Posts</Text>
                 </View>
                 <View style={styles.listView}>
                     <Image 

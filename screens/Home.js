@@ -3,11 +3,6 @@ import { Image, StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity } 
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { IconButton, Colors } from 'react-native-paper';
-import Post from './Post';
-
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
 
 const DATA = [
     {

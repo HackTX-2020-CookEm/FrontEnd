@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 import * as Google from 'expo-google-app-auth';
 import firebase from 'firebase';
 
@@ -106,7 +106,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.logo}>PotLuck</Text>
+                <Image style={{ height:300, width:300, marginTop:55 }} source={require('../assets/PotLuck.png')} />
                 <View style={styles.inputView} >
                     <TextInput  
                         style={styles.inputText}
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     },
     loginBtn:{
         width:"80%",
-        backgroundColor:"#BF5700",
+        backgroundColor:"#D4AF37",
         borderRadius:25,
         height:50,
         alignItems:"center",

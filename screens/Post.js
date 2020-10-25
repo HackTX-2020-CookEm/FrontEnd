@@ -58,7 +58,7 @@ export default function Post() {
                                 <TextInput
                                     style={styles.input}
                                     placeholder="Caption..." 
-                                    placeholderTextColor="black"
+                                    placeholderTextColor="gray"
 
                                     multiline={true}
                                 />
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     logo: {
         fontWeight:"bold",
         fontSize:35,
-        color:'#D4AF37',
+        color:"#D4AF37",
         marginBottom:20,
         marginTop:70,
         marginLeft:20,
@@ -119,11 +119,10 @@ const styles = StyleSheet.create({
     postButCont: {
         justifyContent:'center',
         alignItems:'center',
-        color: '#D4AF37'
     },
     postContent:{
         width:"60%",
-        backgroundColor:"#FF1300",
+        backgroundColor:"#D4AF37",
         borderRadius:25,
         height:50,
         alignItems:"center",

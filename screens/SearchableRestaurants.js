@@ -26,9 +26,9 @@ class FlatListDemo extends Component {
                 picture:'https://pbs.twimg.com/profile_images/2217729421/kokodak_new_400x400.jpg',
             },
             {
-                name:{first:"Gong cha"},
-                user:'2021 Guadalupe St, Austin, TX 78705',
-                picture:'https://seeklogo.com/images/G/gongcha-logo-40F7622035-seeklogo.com.png',
+                name:{first:"Siena Restaurant", last: 'Italian'},
+                user:'6203 N Capital of Texas Hwy, Austin, TX 78731',
+                picture:'https://sienaaustin.com/wp-content/uploads/2019/02/Siena-Toscana-logo-2x.png',
             },
             {
                 name:{first:'Snooze, an A.M. Eatery', last: 'American'},
@@ -41,14 +41,14 @@ class FlatListDemo extends Component {
                 picture:'https://i.pinimg.com/originals/a6/d0/cf/a6d0cf480d58e252fda2a9f23d64ff0d.png',
             },
             {
-                name:{first:"Kung Fu Tea"},
-                user:'2001 Guadalupe St #A2, Austin, TX 78705',
-                picture:'https://s.hdnux.com/photos/01/05/34/73/18206424/5/920x920.jpg',
+                name:{first:"Z'Tejas", last: 'Mexican'},
+                user:'9400 A, Arboretum Blvd, Austin, TX 78759',
+                picture:'https://www.24-7pressrelease.com/assets/attachments/046/press_release_distribution_0464922_142950.jpg',
             },
             {
-                name:{first:'Sharetea'},
-                user:'13343 US-183 #275, Austin, TX 78750',
-                picture:'https://www.capitaland.com/content/dam/capitaland-tenants/imported/en/-/media/cma-malls/websites/storefront_560/s/sharetea_560.jpg.transform/cap-lowres/image.jpg',
+                name:{first:'North Italia', last: 'Italian'},
+                user:'11506 Century Oaks Terrace Suite 124, Austin, TX 78758',
+                picture:'https://pinpointretail.com/wp-content/uploads/2017/05/projects-northitalia.png',
             },
             {
                 name:{first:'Roaring Fork', last: 'American'},

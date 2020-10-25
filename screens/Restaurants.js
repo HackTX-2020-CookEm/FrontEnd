@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import SearchableRestaurants from './SearchableList';
+import SearchableRestaurants from './SearchableRestaurants';
 import { IconButton, Colors } from 'react-native-paper';
 
 const Restaurants = ({navigation}) => {

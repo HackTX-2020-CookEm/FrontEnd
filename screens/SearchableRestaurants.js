@@ -10,151 +10,151 @@ class FlatListDemo extends Component {
         loading: false,
         data: 
         [
-          {
-              name:{first:'Jasmine', last: 'Lu'},
-              user:'jlu484',
-              picture:'https://i.pinimg.com/736x/fc/45/6a/fc456aba424730185b1496c75c99c7d2.jpg',
-          },
-          {
-              name:{first:'Albert', last: 'Cho'},
-              user:'_albertcho_',
-              picture:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
-          },
-          {
-              name:{first:'Ashray', last: 'Desai'},
-              user:'illushray',
-              picture:'https://media-exp1.licdn.com/dms/image/C4E03AQEcZa0dO6mqKA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=LuY6cP7DRw_iZepYkM63EynXpLnpLnqQZp1hoOYejkw',
-          },
-          {
-              name:{first:"Loni", last:"Fogaça"},
-              user:'lonny1994',
-              picture:'https://randomuser.me/api/portraits/women/16.jpg',
-          },
-          {
-              name:{first:'Nathaniel', last: 'Webb'},
-              user:'webbster',
-              picture:'https://randomuser.me/api/portraits/men/84.jpg',
-          },
-          {
-              name:{first:'Jarod', last: 'Vester'},
-              user:'jv3913',
-              picture:'https://randomuser.me/api/portraits/men/98.jpg',
-          },
-          {
-              name:{first:"Elias", last:"Toivonen"},
-              user:'smallfrog350',
-              picture:'https://randomuser.me/api/portraits/men/28.jpg',
-          },
-          {
-              name:{first:'Nina', last: 'Reid'},
-              user:'tinypeacock634',
-              picture:'https://randomuser.me/api/portraits/women/37.jpg',
-          },
-          {
-              name:{first:'Laura', last: 'Jackson'},
-              user:'greenbird919',
-              picture:'https://randomuser.me/api/portraits/women/78.jpg',
-          },
-          {
-              name:{first:'Jason', last:'Math'},
-              user:'jmath123',
-              picture:'https://i.pinimg.com/originals/5a/c9/d9/5ac9d91aee8d3b1cc377f87220379f88.jpg',
-          },
-          {
-              name:{first:'Kimberly', last:'Ludwig'},
-              user:'kimmielud',
-              picture:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
-          },
-          {
-              name:{first:'Max', last:'Wolfenstein'},
-              user:'shoemastercop',
-              picture:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
-          },
-          {
-              name:{first:'Camille', last:'Jack'},
-              user:'camille-jj',
-              picture:'https://newtv.org/images/assets/New-Facility-Additions/_resampled/croppedimage128128-Ball-Jars-Sharon-Schindler-Photography-2012.jpg',
-          },
-          {
-              name:{first:'Richard', last:'Belson'},
-              user:'gavinlovebelson',
-              picture:'https://s3-us-west-2.amazonaws.com/assets.coderag.prd/wp-content/uploads/2017/06/coderag_s4_banners_gavin.jpg.png',
-          },
+            {
+                name:{first:'Ramen Tatsu-Ya'},
+                user:'1234 S Lamar Blvd, Austin, TX 78704',
+                picture:'https://i.pinimg.com/originals/7e/7e/93/7e7e938e9821be8c99c63fca9a2f068f.png',
+            },
+            {
+                name:{first:'Loro'},
+                user:'2115 S Lamar Blvd, Austin, TX 78704',
+                picture:'https://s3.amazonaws.com/cuag/entities/000/131/700/avatar180-240f1790603f67d52b442a02d5d57c80-110-137-816-736.jpg',
+            },
+            {
+                name:{first:'Kokodak'},
+                user:'2522 Guadalupe St, Austin, TX 78705',
+                picture:'https://pbs.twimg.com/profile_images/2217729421/kokodak_new_400x400.jpg',
+            },
+            {
+                name:{first:"Gong cha"},
+                user:'2021 Guadalupe St, Austin, TX 78705',
+                picture:'https://seeklogo.com/images/G/gongcha-logo-40F7622035-seeklogo.com.png',
+            },
+            {
+                name:{first:'Snooze, an A.M. Eatery'},
+                user:'3800 N Lamar Blvd Suite 120, Austin, TX 78756',
+                picture:'https://www.snoozeeatery.com/wp-content/uploads/2019/10/Logo.jpg',
+            },
+            {
+                name:{first:"Hopdoddy Burger Bar"},
+                user:'4615 N Lamar Blvd Suite 307, Austin, TX 78751',
+                picture:'https://i.pinimg.com/originals/a6/d0/cf/a6d0cf480d58e252fda2a9f23d64ff0d.png',
+            },
+            {
+                name:{first:"Kung Fu Tea"},
+                user:'2001 Guadalupe St #A2, Austin, TX 78705',
+                picture:'https://s.hdnux.com/photos/01/05/34/73/18206424/5/920x920.jpg',
+            },
+            {
+                name:{first:'Sharetea'},
+                user:'13343 US-183 #275, Austin, TX 78750',
+                picture:'https://www.capitaland.com/content/dam/capitaland-tenants/imported/en/-/media/cma-malls/websites/storefront_560/s/sharetea_560.jpg.transform/cap-lowres/image.jpg',
+            },
+            {
+                name:{first:'Roaring Fork'},
+                user:'701 Congress Ave, Austin, TX 78701',
+                picture:'https://arizonarestaurantweek.com/wp-content/uploads/2019/08/roaring-fork-logo.jpg',
+            },
+            {
+                name:{first:'Sway'},
+                user:'11501 Rock Rose Ave #100, Austin, TX 78758',
+                picture:'https://s3.amazonaws.com/toasttab/restaurants/restaurant-54416000000000000/restaurant_1593444511_180.png',
+            },
+            {
+                name:{first:'Frost Gelato'},
+                user:'11700 Rock Rose Ave suite 176 suite 176, Austin, TX 78758',
+                picture:'https://gpsvnet.net/wp-content/uploads/2017/05/frost.jpeg',
+            },
+            {
+                name:{first:'JINYA Ramen Bar'},
+                user:'3210 Esperanza Crossing Suite 130, Austin, TX 78758',
+                picture:'https://pbs.twimg.com/profile_images/916114096742793216/3VVRQT9R.jpg',
+            },
+            {
+                name:{first:'Culinary Dropout'},
+                user:'11721 Rock Rose Ave Ste #100, Austin, TX 78758',
+                picture:'https://2.bp.blogspot.com/-1-mRiBiJdfc/UKGM5b3SRcI/AAAAAAAABqw/oEq0dufAJQU/s1600/culinarydropout-logo.jpeg',
+            },
+            {
+                name:{first:'SUSHI JUNAI 1'},
+                user:'1612 Lavaca St, Austin, TX 78701',
+                picture:'https://media.glassdoor.com/sqll/3005343/sushi-junai-omakase-squarelogo-1567659183552.png',
+            },
         ],
         error: null,
       };
   
       this.arrayholder = [
-          {
-              name:{first:'Jasmine', last: 'Lu'},
-              user:'jlu484',
-              picture:'https://i.pinimg.com/736x/fc/45/6a/fc456aba424730185b1496c75c99c7d2.jpg',
-          },
-          {
-              name:{first:'Albert', last: 'Cho'},
-              user:'_albertcho_',
-              picture:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
-          },
-          {
-              name:{first:'Ashray', last: 'Desai'},
-              user:'illushray',
-              picture:'https://media-exp1.licdn.com/dms/image/C4E03AQEcZa0dO6mqKA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=LuY6cP7DRw_iZepYkM63EynXpLnpLnqQZp1hoOYejkw',
-          },
-          {
-              name:{first:"Loni", last:"Fogaça"},
-              user:'lonny1994',
-              picture:'https://randomuser.me/api/portraits/women/16.jpg',
-          },
-          {
-              name:{first:'Nathaniel', last: 'Webb'},
-              user:'webbster',
-              picture:'https://randomuser.me/api/portraits/men/84.jpg',
-          },
-          {
-              name:{first:'Jarod', last: 'Vester'},
-              user:'jv3913',
-              picture:'https://randomuser.me/api/portraits/men/98.jpg',
-          },
-          {
-              name:{first:"Elias", last:"Toivonen"},
-              user:'smallfrog350',
-              picture:'https://randomuser.me/api/portraits/men/28.jpg',
-          },
-          {
-              name:{first:'Nina', last: 'Reid'},
-              user:'tinypeacock634',
-              picture:'https://randomuser.me/api/portraits/women/37.jpg',
-          },
-          {
-              name:{first:'Laura', last: 'Jackson'},
-              user:'greenbird919',
-              picture:'https://randomuser.me/api/portraits/women/78.jpg',
-          },
-          {
-              name:{first:'Jason', last:'Math'},
-              user:'jmath123',
-              picture:'https://i.pinimg.com/originals/5a/c9/d9/5ac9d91aee8d3b1cc377f87220379f88.jpg',
-          },
-          {
-              name:{first:'Kimberly', last:'Ludwig'},
-              user:'kimmielud',
-              picture:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
-          },
-          {
-              name:{first:'Max', last:'Wolfenstein'},
-              user:'shoemastercop',
-              picture:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
-          },
-          {
-              name:{first:'Camille', last:'Jack'},
-              user:'camille-jj',
-              picture:'https://newtv.org/images/assets/New-Facility-Additions/_resampled/croppedimage128128-Ball-Jars-Sharon-Schindler-Photography-2012.jpg',
-          },
-          {
-              name:{first:'Richard', last:'Belson'},
-              user:'gavinlovebelson',
-              picture:'https://s3-us-west-2.amazonaws.com/assets.coderag.prd/wp-content/uploads/2017/06/coderag_s4_banners_gavin.jpg.png',
-          },
+        {
+            name:{first:'Ramen Tatsu-Ya'},
+            user:'1234 S Lamar Blvd, Austin, TX 78704',
+            picture:'https://i.pinimg.com/originals/7e/7e/93/7e7e938e9821be8c99c63fca9a2f068f.png',
+        },
+        {
+            name:{first:'Loro'},
+            user:'2115 S Lamar Blvd, Austin, TX 78704',
+            picture:'https://s3.amazonaws.com/cuag/entities/000/131/700/avatar180-240f1790603f67d52b442a02d5d57c80-110-137-816-736.jpg',
+        },
+        {
+            name:{first:'Kokodak'},
+            user:'2522 Guadalupe St, Austin, TX 78705',
+            picture:'https://pbs.twimg.com/profile_images/2217729421/kokodak_new_400x400.jpg',
+        },
+        {
+            name:{first:"Gong cha"},
+            user:'2021 Guadalupe St, Austin, TX 78705',
+            picture:'https://seeklogo.com/images/G/gongcha-logo-40F7622035-seeklogo.com.png',
+        },
+        {
+            name:{first:'Snooze, an A.M. Eatery'},
+            user:'3800 N Lamar Blvd Suite 120, Austin, TX 78756',
+            picture:'https://www.snoozeeatery.com/wp-content/uploads/2019/10/Logo.jpg',
+        },
+        {
+            name:{first:"Hopdoddy Burger Bar"},
+            user:'4615 N Lamar Blvd Suite 307, Austin, TX 78751',
+            picture:'https://i.pinimg.com/originals/a6/d0/cf/a6d0cf480d58e252fda2a9f23d64ff0d.png',
+        },
+        {
+            name:{first:"Kung Fu Tea"},
+            user:'2001 Guadalupe St #A2, Austin, TX 78705',
+            picture:'https://s.hdnux.com/photos/01/05/34/73/18206424/5/920x920.jpg',
+        },
+        {
+            name:{first:'Sharetea'},
+            user:'13343 US-183 #275, Austin, TX 78750',
+            picture:'https://www.capitaland.com/content/dam/capitaland-tenants/imported/en/-/media/cma-malls/websites/storefront_560/s/sharetea_560.jpg.transform/cap-lowres/image.jpg',
+        },
+        {
+            name:{first:'Roaring Fork'},
+            user:'701 Congress Ave, Austin, TX 78701',
+            picture:'https://arizonarestaurantweek.com/wp-content/uploads/2019/08/roaring-fork-logo.jpg',
+        },
+        {
+            name:{first:'Sway'},
+            user:'11501 Rock Rose Ave #100, Austin, TX 78758',
+            picture:'https://s3.amazonaws.com/toasttab/restaurants/restaurant-54416000000000000/restaurant_1593444511_180.png',
+        },
+        {
+            name:{first:'Frost Gelato'},
+            user:'11700 Rock Rose Ave suite 176 suite 176, Austin, TX 78758',
+            picture:'https://gpsvnet.net/wp-content/uploads/2017/05/frost.jpeg',
+        },
+        {
+            name:{first:'JINYA Ramen Bar'},
+            user:'3210 Esperanza Crossing Suite 130, Austin, TX 78758',
+            picture:'https://pbs.twimg.com/profile_images/916114096742793216/3VVRQT9R.jpg',
+        },
+        {
+            name:{first:'Culinary Dropout'},
+            user:'11721 Rock Rose Ave Ste #100, Austin, TX 78758',
+            picture:'https://2.bp.blogspot.com/-1-mRiBiJdfc/UKGM5b3SRcI/AAAAAAAABqw/oEq0dufAJQU/s1600/culinarydropout-logo.jpeg',
+        },
+        {
+            name:{first:'SUSHI JUNAI 1'},
+            user:'1612 Lavaca St, Austin, TX 78701',
+            picture:'https://media.glassdoor.com/sqll/3005343/sushi-junai-omakase-squarelogo-1567659183552.png',
+        },
         ];
     }
   
@@ -181,7 +181,7 @@ class FlatListDemo extends Component {
       });
   
       const newData = this.arrayholder.filter(item => {
-        const itemData = `${item.user.toUpperCase()} ${item.name.first.toUpperCase()} ${item.name.last.toUpperCase()}`;
+        const itemData = `${item.user.toUpperCase()} ${item.name.first.toUpperCase()}`;
         const textData = text.toUpperCase();
   
         return itemData.indexOf(textData) > -1;
@@ -223,7 +223,7 @@ class FlatListDemo extends Component {
             renderItem={({ item }) => (
               <ListItem
                 leftAvatar={{ source: { uri: item.picture } }}
-                title={`${item.name.first} ${item.name.last}`}
+                title={`${item.name.first}`}
                 subtitle={item.user}
               />
             )}

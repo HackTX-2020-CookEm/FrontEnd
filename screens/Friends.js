@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import SearchableFlatList from './SearchableList';
 
 const Friends = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.logo}>Friends</Text>
+            <SearchableFlatList/>
         </View>
     );
 };

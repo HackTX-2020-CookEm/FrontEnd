@@ -1,24 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
-import { Image, Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Keyboard, TouchableWithoutFeedback, Image, Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Input } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
 
-
-const DATA = [
-    {
-        user_name:'Jasmine Lu',
-        user_image:'https://i.pinimg.com/736x/fc/45/6a/fc456aba424730185b1496c75c99c7d2.jpg',
-        feed_image:'https://www.chasinglenscapes.com/wp-content/uploads/2020/06/food-photography-on-the-go-tips.jpg',
-        user_comment:'Check out this amazing dinner I had last night. Absolutely loved it!',
-        user_likes:'130',
-        user_chat:'3',
-    },
-]
 
 export default function Post() {
 
-    const [user_image, setImage] = useState(null);
+    const [feed_image, setImage] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -54,13 +42,17 @@ export default function Post() {
             <View style={styles.content}>
                 <View style={styles.picturePicker}>
                     <Button title="Pick an image from camera roll" onPress={pickImage} />
-                    {user_image && <Image source={{ uri: user_image }} style={{ width: 200, height: 200 }} />}
+                    {feed_image && <Image source={{ uri: feed_image }} style={{ width: 200, height: 200 }} />}
                 </View>
-                <View style={styles.inputField}>
-                    <Input
-                        placeholder='Caption...'
-                    />
-                </View>
+                    <View style={styles.inputField}>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Caption..." 
+                            placeholderTextColor="black"
+
+                            multiline={true}
+                        />
+                    </View>
                 <View style={styles.postButCont}>
                     <TouchableOpacity style={styles.postContent} onPress={()=> alert('')}>
                         <Text style={styles.postText}>Post</Text>
@@ -101,12 +93,15 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20
     },
-    inputText:{
-        height:50,
-        color:"black",
+    input:{
+        width:350,
+        fontSize:16,
+        borderBottomColor:'gray',
+        borderBottomWidth:1,
     },
     inputField:{
-        marginBottom:50,
+        marginBottom:70,
+        alignItems:'center',
     },
     postButCont: {
         justifyContent:'center',

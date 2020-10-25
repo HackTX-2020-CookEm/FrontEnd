@@ -17,7 +17,7 @@ class FlatListDemo extends Component {
         },
         {
             name:{first:'Albert', last: 'Cho'},
-            user:'albert-cho',
+            user:'_albertcho_',
             picture:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
         },
         {
@@ -57,27 +57,27 @@ class FlatListDemo extends Component {
         },
         {
             name:{first:'Jason', last:'Math'},
-            user:'jMath123',
+            user:'jmath123',
             picture:'https://i.pinimg.com/originals/5a/c9/d9/5ac9d91aee8d3b1cc377f87220379f88.jpg',
         },
         {
             name:{first:'Kimberly', last:'Ludwig'},
-            user:'KimmieLud',
+            user:'kimmielud',
             picture:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
         },
         {
             name:{first:'Max', last:'Wolfenstein'},
-            user:'ShoeMasterCop',
+            user:'shoemastercop',
             picture:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
         },
         {
             name:{first:'Camille', last:'Jack'},
-            user:'Camille-JJ',
+            user:'camille-jj',
             picture:'https://newtv.org/images/assets/New-Facility-Additions/_resampled/croppedimage128128-Ball-Jars-Sharon-Schindler-Photography-2012.jpg',
         },
         {
             name:{first:'Richard', last:'Belson'},
-            user:'GavinLoveBelson',
+            user:'gavinlovebelson',
             picture:'https://s3-us-west-2.amazonaws.com/assets.coderag.prd/wp-content/uploads/2017/06/coderag_s4_banners_gavin.jpg.png',
         },
       ],
@@ -92,7 +92,7 @@ class FlatListDemo extends Component {
         },
         {
             name:{first:'Albert', last: 'Cho'},
-            user:'albert-cho',
+            user:'_albertcho_',
             picture:'https://media-exp1.licdn.com/dms/image/C5603AQFJAfjFv76A8g/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=G6DqS5yMxx9F2V8i6aYBSTAoe93_7-KxF62iTX1tQRE',
         },
         {
@@ -132,27 +132,27 @@ class FlatListDemo extends Component {
         },
         {
             name:{first:'Jason', last:'Math'},
-            user:'jMath123',
+            user:'jmath123',
             picture:'https://i.pinimg.com/originals/5a/c9/d9/5ac9d91aee8d3b1cc377f87220379f88.jpg',
         },
         {
             name:{first:'Kimberly', last:'Ludwig'},
-            user:'KimmieLud',
+            user:'kimmielud',
             picture:'https://end.org/cms/assets/uploads/2018/02/Kimberly-new-web-pic.jpg',
         },
         {
             name:{first:'Max', last:'Wolfenstein'},
-            user:'ShoeMasterCop',
+            user:'shoemastercop',
             picture:'https://www.insightpartners.com//assets/media/2018/02/wolff-max-e1519433585742-650x650.jpg',
         },
         {
             name:{first:'Camille', last:'Jack'},
-            user:'Camille-JJ',
+            user:'camille-jj',
             picture:'https://newtv.org/images/assets/New-Facility-Additions/_resampled/croppedimage128128-Ball-Jars-Sharon-Schindler-Photography-2012.jpg',
         },
         {
             name:{first:'Richard', last:'Belson'},
-            user:'GavinLoveBelson',
+            user:'gavinlovebelson',
             picture:'https://s3-us-west-2.amazonaws.com/assets.coderag.prd/wp-content/uploads/2017/06/coderag_s4_banners_gavin.jpg.png',
         },
       ];

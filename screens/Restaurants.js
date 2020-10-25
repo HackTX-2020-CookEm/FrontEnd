@@ -13,7 +13,7 @@ const Restaurants = ({navigation}) => {
                 <View style={styles.containerRight}>
                     <IconButton
                         icon="bookmark"
-                        color="black"
+                        color='#FF1300'
                         size={30}
                     />
                 </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     logo: {
         fontWeight:"bold",
         fontSize:35,
-        color:"black",
+        color:'#D4AF37',
         marginBottom:20,
         marginTop:70,
         marginLeft:20,

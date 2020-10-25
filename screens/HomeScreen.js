@@ -37,14 +37,19 @@ const HomeScreen = ({navigation}) => {
                     else if (route.name === 'Profile') {
                       iconName = 'ios-list';
                     }
+                    else if (route.name === 'For You') {
+                      iconName = 'ios-restaurant';
+                    }
+
 
                     // You can return any component that you like here!
                     return <Ionicons name={iconName} size={size} color={color} />;
                   },
                 })}
                 tabBarOptions={{
-                  activeTintColor: '#BF5700',
-                  inactiveTintColor: 'gray', }}>
+                  activeTintColor: '#FF1300',
+                  inactiveTintColor: '#D4AF37',
+                  }}>
                 <Tab.Screen name="Home" component={ createHomeScreenStack } options={{ headerShown: false }} />
                 <Tab.Screen name="Friends" component={ Friends } options={{ headerShown: false }} />
                 <Tab.Screen name="Explore" component={ Explore } options={{ headerShown: false }} />

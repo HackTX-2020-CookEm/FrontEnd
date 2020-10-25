@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, Dimensions, Image, StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 import firebase from 'firebase';
+import { IconButton, Colors } from 'react-native-paper';
 
 const width = Dimensions.get('window').width
 
@@ -12,7 +13,17 @@ const Profile = ({navigation}) => {
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.logo}>Profile</Text>
+                    <View style={styles.containerLeft}>
+                        <Text style={styles.logo}>Profile</Text>
+                    </View>
+                    <View style={styles.containerRight}>
+                        <IconButton
+                            icon="power-standby"
+                            color="black"
+                            size={30}
+                            onPress={() => firebase.auth().signOut()}
+                        />
+                    </View>
                 </View>
                 <View style={styles.itemContainer}>
                     <Image 
@@ -36,9 +47,6 @@ const Profile = ({navigation}) => {
                             uri: 'https://i.ndtvimg.com/i/2015-10/grilled-fish-625_625x350_41445897097.jpg'}}
                     />
                 </View>
-                <View style={styles.items}>
-                    <Button title='Sign Out' onPress={() => firebase.auth().signOut()} />
-                </View>
             </View>
         </ScrollView>
     );
@@ -51,11 +59,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FAFDFF',
     },
-    items: {
-        alignItems: 'center',
-        marginTop:100,
-        marginBottom:100
-    },
     logo: {
         fontWeight:"bold",
         fontSize:35,
@@ -63,6 +66,10 @@ const styles = StyleSheet.create({
         marginBottom:20,
         marginTop:70,
         marginLeft:20,
+    },
+    header: {
+        flexDirection:'row',
+        justifyContent:'space-between',
     },
     signBtn:{
         width:"60%",
@@ -114,4 +121,9 @@ const styles = StyleSheet.create({
       marginLeft: 10,
       marginTop: 10
     }, 
+    containerRight: {
+        marginRight:15,
+        marginTop:62,
+        flexDirection:'row',
+    },
 });

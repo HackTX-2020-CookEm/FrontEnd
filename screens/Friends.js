@@ -1,11 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import SearchableFlatList from './SearchableList';
+import { IconButton, Colors } from 'react-native-paper';
 
 const Friends = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.logo}>Friends</Text>
+            <View style={styles.header}>
+                <View style={styles.containerLeft}>
+                    <Text style={styles.logo}>Profile</Text>
+                </View>
+                <View style={styles.containerRight}>
+                    <IconButton
+                        icon="account-multiple-plus"
+                        color="black"
+                        size={30}
+                    />
+                </View>
+            </View>
             <SearchableFlatList/>
         </View>
     );
@@ -25,5 +37,14 @@ const styles = StyleSheet.create({
         marginBottom:20,
         marginTop:70,
         marginLeft:20,
+    },
+    header: {
+        flexDirection:'row',
+        justifyContent:'space-between',
+    },
+    containerRight: {
+        marginRight:15,
+        marginTop:62,
+        flexDirection:'row',
     },
 });

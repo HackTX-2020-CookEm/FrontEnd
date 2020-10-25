@@ -1,8 +1,14 @@
 import React, { Component, useState, useEffect } from 'react';
-import { Keyboard, TouchableWithoutFeedback, Image, Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Keyboard, TouchableWithoutFeedback, Image, 
+    Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Input } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
 
+const DismissKeyboard =({children}) => (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        {children}
+    </TouchableWithoutFeedback>
+);
 
 export default function Post() {
 
@@ -44,15 +50,17 @@ export default function Post() {
                     <Button title="Pick an image from camera roll" onPress={pickImage} />
                     {feed_image && <Image source={{ uri: feed_image }} style={{ width: 200, height: 200 }} />}
                 </View>
+                <DismissKeyboard>
                     <View style={styles.inputField}>
                         <TextInput
                             style={styles.input}
                             placeholder="Caption..." 
                             placeholderTextColor="black"
 
-                            multiline={true}
+                            multiline={false}
                         />
                     </View>
+                </DismissKeyboard>
                 <View style={styles.postButCont}>
                     <TouchableOpacity style={styles.postContent} onPress={()=> alert('')}>
                         <Text style={styles.postText}>Post</Text>

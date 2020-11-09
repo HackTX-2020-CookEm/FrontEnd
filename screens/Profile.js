@@ -29,9 +29,9 @@ const Profile = ({navigation}) => {
                     <Image 
                         style={styles.userImage} 
                         source={{
-                            uri: 'https://media-exp1.licdn.com/dms/image/C5603AQGGG9Ms4ygWvA/profile-displayphoto-shrink_800_800/0?e=1608768000&v=beta&t=b6QzI52ads4LXVsf1GBftgWFWxk8OHOdY72EUk3gJTw'}}
+                            uri: 'https://media-exp1.licdn.com/dms/image/C4E03AQEpMTHSF4dBDg/profile-displayphoto-shrink_200_200/0?e=1609372800&v=beta&t=MnrfS1hH3Ss_Gjvb5nCbGI090OPpRGu_00pdXD41BBM'}}
                     />
-                    <Text style={styles.profileName}><B>Kevin Yang</B> (kevkev3000)</Text>
+                    <Text style={styles.profileName}><B>Eric Wang</B> (Cobcannon123)</Text>
                     <Text style={styles.profileText}>Major foodie who loves grilled fish and donuts!</Text>
                     <Text style={styles.profileInfo}><B>14</B> Friends                <B>2</B> Posts</Text>
                 </View>

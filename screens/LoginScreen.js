@@ -106,7 +106,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Image style={{ height:300, width:300, marginTop:55 }} source={require('../assets/PotLuck.png')} />
+                <Image style={{ height:300, width:300, marginTop:36 }} source={require('../assets/PotLuck.png')} />
                 <View style={styles.inputView} >
                     <TextInput  
                         style={styles.inputText}
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         fontSize:50,
         color:"#BF5700",
         marginBottom:40,
-        marginTop:190,
+        marginTop:150,
     },
     inputView:{
         width:"80%",
@@ -188,6 +188,6 @@ const styles = StyleSheet.create({
         color:"black"
     },
     googleLogin:{
-        marginTop:170
+        marginTop:100
     }
 });
